@@ -10,9 +10,10 @@ const Sidebar = () => {
         width={"fit-content"}
         display="flex"
         flexDirection={"column"}
-        sx={{ bgcolor: "secondary.main" }}
+        color="inherit"
         padding={1.5}
         top={70}
+        sx={{backgroundColor:"primary.main", "> *": {color:"text.primary"}}}
       >
         <Tooltip  title="Dashboard" placement="right-end" arrow> 
           <IconButton>
@@ -21,27 +22,26 @@ const Sidebar = () => {
         </Tooltip>
        
         <IconButton>
-          <Link href={'/admin/entries'}> <EditNoteOutlined fontSize="medium"/></Link>
-         
+          <Link href={'/admin/entries'}> <EditNoteOutlined fontSize="medium"/></Link> 
         </IconButton>
         <IconButton  >
-        <Link href={'/admin/assets'}>
+        <Link href={'/admin/assets'} color={'text.primary'}>
           <PermMediaOutlined fontSize="medium"/>
           </Link>
         </IconButton>
         <IconButton>
-        <Link href={'/admin/content-types'}>
+        <Link href={'/admin/content-types'}  color={'text.primary'}>
           <FlipToFrontOutlined fontSize="medium"/>
           </Link>
         </IconButton>
-        <Divider sx={{marginTop:2, marginBottom:2}}/>
+        <Divider sx={{marginTop:2, marginBottom:2}}  color={'text.primary'}/>
         <IconButton>
-        <Link href={'/admin/settings'}>
+        <Link href={'/admin/settings'}  color={'text.primary'}>
           <SettingsOutlined fontSize="medium"/>
           </Link>
         </IconButton>
         <IconButton>
-        <Link href={'/admin/users'}>
+        <Link href={'/admin/users'}  color={'text.primary'}>
           <PeopleAltOutlined fontSize="medium"/>
           </Link> 
         </IconButton>

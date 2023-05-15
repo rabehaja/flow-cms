@@ -51,7 +51,7 @@ const Header = () => {
     <Box >
       <AppBar
         position="sticky"
-        color="secondary"
+ 
         sx={{ border: "0", boxShadow: 0 }}
       >
         <Toolbar>
@@ -72,12 +72,13 @@ const Header = () => {
               variant="filled"
               sx={{
                 backgroundColor: "background.default",
-                color: "primary.main",
+                color: "secondary.main",
               }}
+              inputProps={{color:"text.secondary"}}
             ></TextField>
           </Box>
 
-          <Box sx={{ "> *": { color: "text.secondary" } }}>
+          <Box sx={{ "> *": { color: "text.primary" } }}>
             <IconButton>
               <Badge badgeContent={4} color="error">
                 <Mail />

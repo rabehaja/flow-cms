@@ -19,13 +19,11 @@ export default function AdminLayout({
         <Box
           sx={{
             minHeight: "100%",
-            minWidth: "100%",
-           
-            borderTop:1,
-            borderTopColor:"primary.main",
-            borderLeft:1,
-            borderLeftColor:"primary.main"
+            width: "100%",
           }}
+          borderTop={1}
+          borderLeft={1}
+          borderColor={'secondary.main'}
         >
           {children}
         </Box>
