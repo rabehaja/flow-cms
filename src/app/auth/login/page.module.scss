@@ -1,0 +1,6 @@
+.test{
+    text-transform: lowercase;
+    &__sub-container{
+        max-width: fit-content;
+    }
+}
