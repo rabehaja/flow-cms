@@ -3,13 +3,10 @@ import "./normalize.css";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
+import DefaultTheme from "@/theme/theme";
+import { NoSsr } from "@mui/material";
 
-import DefaultTheme from "@/theme";
-import createEmotionCache from "@/utils/createEmotionCache";
-import { CacheProvider } from "@emotion/react";
-
-const inter = Inter({ subsets: ["latin"] });
-const clientSideEmotionCache = createEmotionCache();
+ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -21,14 +18,13 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <CacheProvider value={clientSideEmotionCache}>
+  return (  
     <ThemeProvider theme={DefaultTheme}>
-      <CssBaseline />
       <html lang="en">
-      
-        <body className={inter.className}>{children}</body>
-      </html>
-    </ThemeProvider></CacheProvider>
+        <CssBaseline />
+        <body className={inter.className}>{children}</body> 
+      </html>   
+    </ThemeProvider>
+    
   );
 }

@@ -3,8 +3,8 @@
 import Header from "@/components/admin/Header/Header";
 import Sidebar from "@/components/admin/Sidebar/Sidebar";
 import { Mail } from "@mui/icons-material";
-import { AppBar, Box, Container, IconButton } from "@mui/material";
-import { borderLeft } from "@mui/system";
+import { AppBar, Box, Container, IconButton, NoSsr } from "@mui/material";
+import DashboardLayoutStyles from "./layout.styles";
 
 export default function AdminLayout({
   children,
@@ -12,22 +12,16 @@ export default function AdminLayout({
   children: React.ReactNode;
 }) {
   return (
-    <>
-      <Header />
-      <Box display={"flex"}>
-        <Sidebar />
-        <Box
-          sx={{
-            minHeight: "100%",
-            width: "100%",
-          }}
-          borderTop={1}
-          borderLeft={1}
-          borderColor={'secondary.main'}
-        >
-          {children}
+    <> 
+      <NoSsr>
+        <Header />
+        <Box display={"flex"}>
+          <Sidebar />
+          <Box style={DashboardLayoutStyles.dashboardContainerStyle}>
+            {children}
+          </Box>
         </Box>
-      </Box>
+      </NoSsr>
     </>
   );
 }

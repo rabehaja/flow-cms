@@ -16,5 +16,5 @@ export const PaperStyle: SxProps<Theme> = {
 
 export const FormControlStyle: SxProps<Theme> = {
     "> *" : { marginTop:2},
-    width: "100%"
+    width: "100%" ,
 }

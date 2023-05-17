@@ -4,6 +4,9 @@ const nextConfig = {
     dangerouslyAllowSVG: true,
     domains: ["placehold.co"],
   },
+  compiler:{
+    styledComponents: {ssr:false},
+  },
 };
 
 module.exports = nextConfig;
