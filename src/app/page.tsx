@@ -1,9 +1,17 @@
+'use client'
 
 import LoginPanel from '@/components/auth/login/Login';
 import Image from 'next/image'
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 import styles from './page.module.css'
 
 const Home = ()=>{
+const router = useRouter();
+
+useEffect(()=>{
+  router.replace('/auth/login');
+},[]);
 
   return (
     <main className={styles.main}>

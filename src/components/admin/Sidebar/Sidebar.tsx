@@ -1,12 +1,13 @@
 import { DashboardOutlined, EditNoteOutlined, FlipToFrontOutlined, PeopleAltOutlined, PermMediaOutlined, SettingsOutlined } from "@mui/icons-material";
 import { Box, Divider, IconButton,Tooltip,Link } from "@mui/material";
+import NextLink from "next/link"
 
 
 const Sidebar = () => {
   return (
     <>
       <Box
-        minHeight={"calc(100vh - 70px)"}
+        height={"calc(100vh)"}
         width={"fit-content"}
         display="flex"
         flexDirection={"column"}
@@ -22,7 +23,7 @@ const Sidebar = () => {
         </Tooltip>
        
         <IconButton>
-          <Link href={'/admin/entries'}> <EditNoteOutlined fontSize="medium"/></Link> 
+          <Link href={'/admin/entries'} component={NextLink} color={'inherit'}> <EditNoteOutlined fontSize="medium"/></Link> 
         </IconButton>
         <IconButton  >
         <Link href={'/admin/assets'} color={'text.primary'}>

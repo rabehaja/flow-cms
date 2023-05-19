@@ -7,7 +7,7 @@ minHeight:'100vh',
 padding:2,
 borderRight:1,
 borderColor:'primary.main !important',
-backgroundColor:'secondary.main',
+// backgroundColor:'background.default',
 flexGrow:0
 };
 
@@ -18,7 +18,7 @@ const entriesMainPanelStyle:SxProps<Theme> = {
 };
 
 const entriesMainPanelHeader:SxProps<Theme> = {
-    backgroundColor:'secondary.main'
+    backgroundColor:'background.default'
 };
 
 const tableRowStyle:SxProps<Theme> = {

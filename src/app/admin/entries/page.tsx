@@ -1,42 +1,28 @@
 "use client";
-import { AccountCircle, Add, Circle, Refresh, Search, SettingsOutlined } from "@mui/icons-material";
+import { Add, Circle, Refresh, Search, SettingsOutlined } from "@mui/icons-material";
 import {
-  Badge,
   Box,
   Button,
   Chip,
   IconButton,
-  Menu,
-  MenuItem,
-  MenuList,
-  Paper,
-  Popper,
   Table,
   TableBody,
   TableCell,
-  TableContainer,
   TableHead,
   TableRow,
   Typography,
-  Theme,
-  colors,
-  useTheme,
   Tabs,
   Tab,
-  TextField,
-  Drawer,
-  Slide,
   styled,
-  InputBase,
-  Divider,
-  Collapse
-} from "@mui/material";
-import { MouseEventHandler, useRef, useState } from "react";
+  InputBase} from "@mui/material";
+import { useRef, useState } from "react";
 import EntriesPageStyles from "./page.styles";
 import MenuIcon from '@mui/icons-material/Menu';
+import LeftMenu from "@/components/admin/Dashboard/LeftMenu";
+import FilteredTable from "@/components/Data/Table/FilteredTable";
 
 
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
+const StyledInputBase = styled(InputBase)(({ theme}) => ({
   color: 'inherit',
 
   '& .MuiInputBase-input': {
@@ -55,18 +41,18 @@ const handleDrawer = (event:React.MouseEvent<HTMLButtonElement>) =>{
 }
   return (
     <Box display="flex" flexDirection={"row"} ref={containerRef}>
-      <Collapse in={isDrawerOpen}  timeout={500} orientation='horizontal' >
-        <Box sx={EntriesPageStyles.entriesDrawerStyle} display={isDrawerOpen?'block': 'none'}  >
+         <Box sx={EntriesPageStyles.entriesDrawerStyle} display={isDrawerOpen?'block': 'none'}  >
           <Tabs variant="fullWidth" sx={{borderRadius:2, boxShadow:2, backgroundColor:'white'}}>
-            <Tab  label="Content Types" sx={{borderRight:1, borderColor:'grey', padding:0.2, textTransform:'capitalize'}}></Tab>   
+            <Tab  label="Content Types" sx={{borderRight:1, borderColor:'grey', padding:0.2, textTransform:'capitalize',paddingTop:0, }}></Tab>   
             <Tab  label="Labels" sx={{padding:0.2, textTransform:'capitalize'}}></Tab>        
           </Tabs>
           <Box display={'flex'} padding={0.2} paddingLeft={1} marginTop={2} sx={{backgroundColor:'white', borderRadius:3}} alignItems='center'>
             <Search color="inherit"/>
             <StyledInputBase placeholder="Search content types"></StyledInputBase>
           </Box>
+          <LeftMenu/>
         </Box>
-      </Collapse>
+      {/* </Collapse> */}
       <Box sx={EntriesPageStyles.entriesMainPanelStyle}  >
         {/* Top part  */}
         <Box  sx= {EntriesPageStyles.entriesMainPanelHeader }display="flex" justifyContent={'space-between '} paddingTop={4} paddingBottom={4} paddingLeft={2} paddingRight={2}  borderBottom={1} borderColor='primary.main' >
@@ -84,7 +70,7 @@ const handleDrawer = (event:React.MouseEvent<HTMLButtonElement>) =>{
         </Box>
         {/* end of top part */}
         {/* start of summary of table*/}
-          <Box display={'flex'} justifyContent='space-between' borderBottom={1} borderColor="primary.main" padding={0.5} textAlign={'center'}>
+          {/* <Box display={'flex'} justifyContent='space-between' borderBottom={1} borderColor="primary.main" padding={0.5} textAlign={'center'}>
             <Box>
               <Box display={'flex'} >
                 <span>58 content</span>
@@ -94,31 +80,9 @@ const handleDrawer = (event:React.MouseEvent<HTMLButtonElement>) =>{
             <Box>
               <SettingsOutlined/>
             </Box>
-          </Box>
+          </Box> */}
         {/* end of summary of table*/}
-       
-          <TableContainer >
-            <Table>
-              <TableHead>
-              <TableRow>
-                  <TableCell sx={EntriesPageStyles.tableRowStyle} >Title</TableCell>
-                  <TableCell sx={EntriesPageStyles.tableRowStyle} >Language</TableCell>
-                  <TableCell sx={EntriesPageStyles.tableRowStyle}>Content Type</TableCell>
-                  <TableCell sx={EntriesPageStyles.tableRowStyle}>Version</TableCell>
-                  <TableCell sx={EntriesPageStyles.tableRowStyle}>Environments</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                <TableRow>
-                  <TableCell sx={{color:'inherit'}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, nobis officia nesciunt provident modi ut possimus sunt magni ratione minus dolore. Neque omnis expedita illum ducimus provident repudiandae aut distinctio?</TableCell>
-                  <TableCell >English</TableCell>
-                  <TableCell >Banana</TableCell>
-                  <TableCell >1</TableCell>
-                  <TableCell ><Chip icon={<Circle/>} label="Acc"/></TableCell>
-                </TableRow>
-              </TableBody>
-            </Table>
-          </TableContainer>
+       <FilteredTable/>
       
       </Box>
     </Box>
