@@ -42,10 +42,7 @@ const handleDrawer = (event:React.MouseEvent<HTMLButtonElement>) =>{
   return (
     <Box display="flex" flexDirection={"row"} ref={containerRef}>
          <Box sx={EntriesPageStyles.entriesDrawerStyle} display={isDrawerOpen?'block': 'none'}  >
-          <Tabs variant="fullWidth" sx={{borderRadius:2, boxShadow:2, backgroundColor:'white'}}>
-            <Tab  label="Content Types" sx={{borderRight:1, borderColor:'grey', padding:0.2, textTransform:'capitalize',paddingTop:0, }}></Tab>   
-            <Tab  label="Labels" sx={{padding:0.2, textTransform:'capitalize'}}></Tab>        
-          </Tabs>
+          <Typography variant="h5">Content types </Typography>
           <Box display={'flex'} padding={0.2} paddingLeft={1} marginTop={2} sx={{backgroundColor:'white', borderRadius:3}} alignItems='center'>
             <Search color="inherit"/>
             <StyledInputBase placeholder="Search content types"></StyledInputBase>
@@ -64,24 +61,11 @@ const handleDrawer = (event:React.MouseEvent<HTMLButtonElement>) =>{
           </Box>
           <Box>
            <Box>
-            <Button sx={{textTransform:"capitalize"}} variant='contained' ><Add/>New Content</Button>
+            <Button sx={{textTransform:"capitalize"}} variant='contained' ><Add/>New Entry</Button>
            </Box>
           </Box>
         </Box>
         {/* end of top part */}
-        {/* start of summary of table*/}
-          {/* <Box display={'flex'} justifyContent='space-between' borderBottom={1} borderColor="primary.main" padding={0.5} textAlign={'center'}>
-            <Box>
-              <Box display={'flex'} >
-                <span>58 content</span>
-                <Refresh fontSize="small"/>
-              </Box>
-            </Box>
-            <Box>
-              <SettingsOutlined/>
-            </Box>
-          </Box> */}
-        {/* end of summary of table*/}
        <FilteredTable/>
       
       </Box>

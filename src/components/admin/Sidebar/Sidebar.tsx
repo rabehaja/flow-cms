@@ -18,20 +18,22 @@ const Sidebar = () => {
       >
         <Tooltip  title="Dashboard" placement="right-end" arrow> 
           <IconButton>
-          <DashboardOutlined fontSize="medium"/>
+              <DashboardOutlined fontSize="medium"/>
           </IconButton>
         </Tooltip>
-       
-        <IconButton>
-          <Link href={'/admin/entries'} component={NextLink} color={'inherit'}> <EditNoteOutlined fontSize="medium"/></Link> 
-        </IconButton>
-        <IconButton  >
+       <Tooltip title="Entries" placement="right-end" arrow>
+          <IconButton>
+              <Link href={'/admin/entries'} component={NextLink} color={'inherit'}> <EditNoteOutlined fontSize="medium"/></Link> 
+            </IconButton>
+         
+       </Tooltip>
+       <IconButton  >
         <Link href={'/admin/assets'} color={'text.primary'}>
           <PermMediaOutlined fontSize="medium"/>
           </Link>
         </IconButton>
         <IconButton>
-        <Link href={'/admin/content-types'}  color={'text.primary'}>
+        <Link href={'/admin/content-types'} component={NextLink} color={'text.primary'}>
           <FlipToFrontOutlined fontSize="medium"/>
           </Link>
         </IconButton>

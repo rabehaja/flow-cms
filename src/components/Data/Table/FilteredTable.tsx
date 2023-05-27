@@ -268,7 +268,12 @@ function EnhancedTableToolbar(props: EnhancedTableToolbarProps) {
   );
 }
 
-const FilteredTable = () => {
+
+export type FilteredTableProps = {
+ entries?:any[]
+}
+
+const FilteredTable = (props:FilteredTableProps) => {
   const [order, setOrder] = React.useState<Order>('asc');
   const [orderBy, setOrderBy] = React.useState<keyof Data>('calories');
   const [selected, setSelected] = React.useState<readonly string[]>([]);

@@ -73,7 +73,7 @@ const LeftMenu = (props: Props) => {
     <List sx={{ marginTop: 2 }}>
       {listSample.map((listItem) => {
         return (
-         <LeftMenuButton label={listItem} />
+         <LeftMenuButton label={listItem} key={listItem}/>
         );
       })}
     </List>
